@@ -10,7 +10,7 @@ OUTPUT_FILE     = 'formattedWorkLaptopTunes.txt'
 categories = ['clubbin', 'chill', 'trance', 'techno']
 
 # read in input file 
-with open(os.path.join(INPUT_FOLDER, INPUT_FILE), 'r') as fr:
+with open(os.path.join(INPUT_FOLDER, INPUT_FILE), 'r', encoding='utf8') as fr:
     lines = fr.readlines()
 
 # remove blank lines in between 
@@ -29,6 +29,6 @@ for filteredLineIdx, filteredLine in enumerate(filteredLines):
         outputLines.append(filteredLine)
 
 # write to output file
-with open(os.path.join(INPUT_FOLDER, OUTPUT_FILE), 'w') as fw:
+with open(os.path.join(INPUT_FOLDER, OUTPUT_FILE), 'w', encoding='utf8') as fw:
     fw.writelines(outputLines)
     print('File written to: ', os.path.join(INPUT_FOLDER, OUTPUT_FILE))
